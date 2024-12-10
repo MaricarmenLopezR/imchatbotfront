@@ -25,7 +25,7 @@ export const NavBar = ({ drawerWidth = 280, changeSideBar, handleClick }) => {
             <MenuOutlined />
           </IconButton>
 
-          <Typography variant='h6' noWrap component='div'>Chatbot Inside Out</Typography>
+          <Typography variant='h6' noWrap component='div'>ANITA</Typography>
 
           <IconButton onClick={() => handleClick('NothingSelectedChat')}>
             <SmartToyIcon color='secondary' />

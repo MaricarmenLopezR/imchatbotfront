@@ -22,13 +22,13 @@ export const SideBar = ({ drawerWidth = 240, open, changeSideBar }) => {
       >
         <Toolbar sx={{ backgroundColor: '#6b8d2e', color: 'white' }}>
           <Typography variant='h6' noWrap component='div'>
-            Miguel Becerra
+            Inside out
           </Typography>
         </Toolbar>
         <Divider />
 
         <List>
-          {['Chat numero 1', 'Chat numero 2', 'Chat numero 3', 'Chat numero 4', 'Chat numero 5', 'Chat numero 6'].map((text) => (
+          {['Preguntas Frecuentes'].map((text) => (
             <ListItem key={text} disablePadding>
               <ListItemButton >
                 <ListItemIcon>
@@ -54,13 +54,13 @@ export const SideBar = ({ drawerWidth = 240, open, changeSideBar }) => {
       >
         <Toolbar sx={{ backgroundColor: '#6b8d2e', color: 'white' }}>
           <Typography variant='h6' noWrap component='div'>
-            Miguel Becerra
+            Inside out
           </Typography>
         </Toolbar>
         <Divider />
 
         <List>
-          {['Chat numero 1', 'Chat numero 2', 'Chat numero 3', 'Chat numero 4', 'Chat numero 5', 'Chat numero 6'].map((text) => (
+          {['Preguntas Frecuentes'].map((text) => (
             <ListItem key={text} disablePadding>
               <ListItemButton >
                 <ListItemIcon>

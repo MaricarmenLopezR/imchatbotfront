@@ -1,6 +1,10 @@
-import { CheckCircleOutline, QuestionAnswer, QuestionMark } from '@mui/icons-material'
-import { Alert, Chip, Grid2, Typography } from '@mui/material'
+import { QuestionMark } from '@mui/icons-material'
+import { Chip, Grid2, Typography } from '@mui/material'
+/*
 import { Link } from 'react-router-dom'
+import { Alert, Chip, Grid2, Typography } from '@mui/material'
+import { CheckCircleOutline, QuestionAnswer , QuestionMark } from '@mui/icons-material'
+ */
 
 export const NothingSelectedChat = ({ handleClick }) => {
   return (
@@ -48,11 +52,12 @@ export const NothingSelectedChat = ({ handleClick }) => {
             fontSize: { xs: '0.75rem', sm: '1.1rem', md: '1.5rem', lg: '1.7rem' }
           }}
         />
-        <Chip
+        {/* <Chip
           icon={<QuestionAnswer color='primary' />}
           label="Chatbot de Inside Out"
           onClick={() => handleClick('ChatComponent')}
           variant="outlined"
+          disabled
  // Quitar para habilitar la barra lateral
           sx={{
             marginBottom: '15px',
@@ -61,9 +66,9 @@ export const NothingSelectedChat = ({ handleClick }) => {
             height: '5.2vh',
             fontSize: { xs: '0.8rem', sm: '1.3rem', md: '1.8rem', lg: '1.9rem' }
           }}
-        />
+        /> */}
 
-          <Alert icon={<CheckCircleOutline fontSize="inherit" />} severity="success"
+          {/* <Alert icon={<CheckCircleOutline fontSize="inherit" />} severity="success"
             sx={{
               backgroundColor: 'transparent',
               borderRadius: '30px',
@@ -75,7 +80,7 @@ export const NothingSelectedChat = ({ handleClick }) => {
             <Link onClick={() => handleClick('Terms')} style={{ color: '#6b8d2e', textDecoration: 'underline' }}> Términos </Link>
             y reconoces que leíste nuestra
             <Link onClick={() => handleClick('PrivacyPolicy')} style={{ color: '#6b8d2e', textDecoration: 'underline' }}> Política de privacidad</Link>
-          </Alert>
+          </Alert> */}
       </Grid2>
 
     </Grid2>
