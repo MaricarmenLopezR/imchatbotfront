@@ -20,9 +20,9 @@ export const SideBar = ({ drawerWidth = 240, open, changeSideBar }) => {
           '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth }
         }}
       >
-        <Toolbar sx={{ backgroundColor: '#6b8d2e', color: 'white' }}>
+        <Toolbar sx={{ backgroundColor: '#3FAE49', color: 'white' }}>
           <Typography variant='h6' noWrap component='div'>
-            Inside out
+            Identidad México
           </Typography>
         </Toolbar>
         <Divider />
@@ -52,9 +52,9 @@ export const SideBar = ({ drawerWidth = 240, open, changeSideBar }) => {
           '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth }
         }}
       >
-        <Toolbar sx={{ backgroundColor: '#6b8d2e', color: 'white' }}>
+        <Toolbar sx={{ backgroundColor: '#3FAE49', color: 'white' }}>
           <Typography variant='h6' noWrap component='div'>
-            Inside out
+            Identidad México
           </Typography>
         </Toolbar>
         <Divider />

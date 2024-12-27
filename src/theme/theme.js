@@ -5,10 +5,10 @@ export const theme = createTheme({
   cssVariables: true,
   palette: {
     primary: {
-      main: '#6b8d2e'
+      main: '#3FAE49'
     },
     secondary: {
-      main: '#1f1e3e'
+      main: '#002953'
     },
     error: {
       main: '#bd6c82'
