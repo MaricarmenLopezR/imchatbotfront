@@ -21,6 +21,86 @@ const botResponses = {
 }
 
 // Componente de chat principal
+// export const Faqs = () => {
+//   const [messages, setMessages] = useState([{ text: '¿Cuál es tu pregunta? Estoy aquí para ayudarte.', isUser: false }])
+//   const messagesEndRef = useRef(null) // Referencia para el área de mensajes
+//   const [disableButtons, setDisableButtons] = useState(false) // Estado para deshabilitar botones
+
+//   // Función para manejar cuando el usuario selecciona una pregunta
+//   const handleQuestionClick = (question) => {
+//     // Agregar pregunta seleccionada como mensaje del usuario
+//     setDisableButtons(true) // Deshabilitar botones
+//     setMessages(prevMessages => [...prevMessages, { text: question, isUser: true }])
+
+//     // Responder con la respuesta predefinida del bot
+//     setTimeout(() => {
+//       setMessages(prevMessages => [
+//         ...prevMessages,
+//         { text: botResponses[question], isUser: false }
+//       ])
+//       setDisableButtons(false) // Deshabilitar botones
+//     }, 500)
+//   }
+
+//   // Desplazar scroll al último mensaje
+//   useEffect(() => {
+//     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+//   }, [messages])
+
+//   return (
+//     <Box
+//       sx={{
+//         display: 'flex',
+//         flexDirection: 'column',
+//         height: '91vh', // Ocupa toda la altura de la pantalla
+//         width: { xs: '100%', lg: '100%' },
+//         marginTop: '64px',
+//         alignItems: 'center'
+//       }}
+//     >
+//       {/* Área de mensajes con scroll */}
+//       <Box
+//         sx={{
+//           flexGrow: 1,
+//           p: 2,
+//           overflowY: 'auto',
+//           backgroundColor: '#F5F5F5',
+//           width: { xs: '100%', lg: '70%' },
+//           maxHeight: 'calc(90vh)' // Espacio reservado para la barra de entrada
+//         }}
+//       >
+//         {messages.map((message, index) => (
+//           <Message key={index} text={message.text} isUser={message.isUser} />
+//         ))}
+//         {/* Referencia para mantener el scroll al fondo */}
+//         <div ref={messagesEndRef} />
+//       </Box>
+
+//       {/* Opciones de preguntas iniciales */}
+//       <Box sx={{
+//         p: 2,
+//         backgroundColor: 'white',
+//         borderTop: '1px solid #ddd',
+//         width: { xs: '100%', lg: '65%' }
+//       }}>
+//         <Typography variant="subtitle1" gutterBottom>Selecciona una pregunta:</Typography>
+//         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+//           {initialQuestions.map((question, index) => (
+//             <Button
+//               key={index}
+//               variant="outlined"
+//               onClick={() => handleQuestionClick(question)}
+//               sx={{ textAlign: 'left' }}
+//               disabled={disableButtons}
+//             >
+//               {question}
+//             </Button>
+//           ))}
+//         </Box>
+//       </Box>
+//     </Box>
+//   )
+// }
 export const Faqs = () => {
   const [messages, setMessages] = useState([{ text: '¿Cuál es tu pregunta? Estoy aquí para ayudarte.', isUser: false }])
   const messagesEndRef = useRef(null) // Referencia para el área de mensajes
@@ -28,17 +108,16 @@ export const Faqs = () => {
 
   // Función para manejar cuando el usuario selecciona una pregunta
   const handleQuestionClick = (question) => {
-    // Agregar pregunta seleccionada como mensaje del usuario
     setDisableButtons(true) // Deshabilitar botones
-    setMessages(prevMessages => [...prevMessages, { text: question, isUser: true }])
+    setMessages((prevMessages) => [...prevMessages, { text: question, isUser: true }])
 
     // Responder con la respuesta predefinida del bot
     setTimeout(() => {
-      setMessages(prevMessages => [
+      setMessages((prevMessages) => [
         ...prevMessages,
         { text: botResponses[question], isUser: false }
       ])
-      setDisableButtons(false) // Deshabilitar botones
+      setDisableButtons(false) // Rehabilitar botones
     }, 500)
   }
 
@@ -58,32 +137,18 @@ export const Faqs = () => {
         alignItems: 'center'
       }}
     >
-      {/* Área de mensajes con scroll */}
+      {/* Opciones de preguntas iniciales */}
       <Box
         sx={{
-          flexGrow: 1,
           p: 2,
-          overflowY: 'auto',
-          backgroundColor: '#F5F5F5',
-          width: { xs: '100%', lg: '70%' },
-          maxHeight: 'calc(90vh)' // Espacio reservado para la barra de entrada
+          backgroundColor: 'white',
+          borderBottom: '1px solid #ddd',
+          width: { xs: '100%', lg: '65%' }
         }}
       >
-        {messages.map((message, index) => (
-          <Message key={index} text={message.text} isUser={message.isUser} />
-        ))}
-        {/* Referencia para mantener el scroll al fondo */}
-        <div ref={messagesEndRef} />
-      </Box>
-
-      {/* Opciones de preguntas iniciales */}
-      <Box sx={{
-        p: 2,
-        backgroundColor: 'white',
-        borderTop: '1px solid #ddd',
-        width: { xs: '100%', lg: '65%' }
-      }}>
-        <Typography variant="subtitle1" gutterBottom>Selecciona una pregunta:</Typography>
+        <Typography variant="subtitle1" gutterBottom>
+          Selecciona una pregunta:
+        </Typography>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           {initialQuestions.map((question, index) => (
             <Button
@@ -97,6 +162,24 @@ export const Faqs = () => {
             </Button>
           ))}
         </Box>
+      </Box>
+
+      {/* Área de mensajes con scroll */}
+      <Box
+        sx={{
+          flexGrow: 1,
+          p: 2,
+          overflowY: 'auto',
+          backgroundColor: '#F5F5F5',
+          width: { xs: '100%', lg: '70%' },
+          maxHeight: 'calc(90vh - 80px)' // Ajuste según la altura de las preguntas iniciales
+        }}
+      >
+        {messages.map((message, index) => (
+          <Message key={index} text={message.text} isUser={message.isUser} />
+        ))}
+        {/* Referencia para mantener el scroll al fondo */}
+        <div ref={messagesEndRef} />
       </Box>
     </Box>
   )
